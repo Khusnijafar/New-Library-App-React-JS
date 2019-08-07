@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif, "Bree Serif", 'Tangerine', serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+/* 
+  background-image: url("Squidward.png"); The image used
+  background-color: #cccccc; Used if the image is unavailable
+  background-size: 420px; You must set a specified height
+  background-position: left; Center the image
+  background-repeat: no-repeat; Do not repeat the image */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.button-add{
+  text-align: right;
+  margin:70px 560px;
+}
+
+.button-save{
+  text-align: right;
+  margin:70px 20px;
+}
+
+.button-add button{
+  background-color: DarkCyan;
+  font-weight: bold;
+}
+
+.shake-img {
+  transition: 0.7;
+  box-shadow: 4px 4px 4px 4px DarkCyan;
+}
+
+.shake-img:hover {
+  transform: scale(1.1, 1.1 );
+}
+
+.navbar-color {
+  text-decoration: none !important;
+  color: black;
+}

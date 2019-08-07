@@ -1,0 +1,17 @@
+.list {
+     flex-direction: row;
+     transition: 0.7;
+     box-shadow: 4px 4px 4px 4px DarkCyan;
+     margin-bottom: 100px;
+}
+
+.list:hover {
+  transform: scale(1.1, 1.1 );
+}
+
+.font {
+    margin: 5px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: DarkSlateGrey;
+}
