@@ -95,7 +95,7 @@ class BookDetail extends Component {
     }
     let headers = {'authorization':'khusni', 'Content-Type': 'application/json', 'x-access-token': `bearer ${localStorage.token}`, 'x-control-user': localStorage.id_user} 
 
-    Axios.post(`http://localhost:3001/loanbooks/${data.id_book}`, data, {headers})
+    Axios.post(`https://library-app-backend.herokuapp.com/loanbooks/${data.id_book}`, data, {headers})
     .then((response) => {
       console.log(response);
       
