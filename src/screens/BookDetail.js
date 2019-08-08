@@ -173,9 +173,9 @@ class BookDetail extends Component {
           {
             localStorage.token ?
           <div className="button-detail">
-            <a href="#" onClick={this.toggle}><h3>Edit</h3></a>
-            <a href="#" onClick={() => this.deleteBook()}><h3>Delete</h3></a>
-            <a href="#"  data-toggle="modal" data-target=".bd-example-modal-lg"><h3>Borrow</h3></a>
+            <button onClick={this.toggle} className="btn btn-info"><h3>Edit</h3></button>
+            <button onClick={() => this.deleteBook()} className="btn btn-danger"><h3>Delete</h3></button>
+            <button data-toggle="modal" data-target=".bd-example-modal-lg" className="btn btn-success"><h3>Borrow</h3></button>
           </div> 
           : <div></div> 
           } 

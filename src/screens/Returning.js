@@ -17,7 +17,6 @@ class Returning extends Component {
         .then((res) => {
             console.log(res);
         }) 
-        
     }
 
     handleReturn = (item) => {
@@ -41,9 +40,7 @@ class Returning extends Component {
     }
 
     render() {
-        
-        
-        return (
+            return (
             <div className="container">
             <div className="row mt-5">
               <div className="col-6">
@@ -53,7 +50,7 @@ class Returning extends Component {
                 </ul>
                 <div className="row mt-5">
                   <div class="card mb-3" style={{width: "540px"}}>
-                    {this.props.loanList.map((item) =>{
+                    {this.props.loanList.map((item) => {
                       if(item.information === 'DIPINJAM') {
                           return(
                             <div class="row no-gutters">

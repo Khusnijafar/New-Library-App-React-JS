@@ -12,7 +12,7 @@ const useStyles = makeStyles({
     width: 800,
     borderRadius:50,
     margin:'100px auto -20px',
-    boxShadow: '5px 5px 5px 5px DarkCyan'
+    boxShadow: '3px 3px 3px 3px DarkCyan'
   },
   input: {
     marginLeft: 8,

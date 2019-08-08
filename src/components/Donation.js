@@ -5,8 +5,8 @@ import { addBooks } from '../redux/actions/books';
 import { connect } from 'react-redux'
 
 class Donation extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       modal: false,
       title: '',

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { connect } from 'react-redux'
 import { getHistory } from '../redux/actions/loanbook'
 
@@ -29,7 +28,7 @@ class HistoryBorrow extends Component {
             </ul>
             <div className="row mt-5">
               <div class="card mb-3" style={{width: "540px"}}>
-                {this.props.loanList.map((item) =>{
+                {this.props.loanList.map((item) => {
                   if(item.card_number === this.state.card_number) {
                       return(
                         <div class="row no-gutters">

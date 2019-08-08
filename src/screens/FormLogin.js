@@ -34,23 +34,25 @@ class LoginPage extends Component {
       let regex =  /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       if (this.state.email === '') {
           alert('Email is required')
+          return null
       } else if (regex.test(this.state.email) === false) {
           alert('Email format is incorrect')
+          return null
       } else if (this.state.password === '') {
           alert('Password is required')
+          return null
       } else if (this.state.passwordConfirm === '') {
         alert('Confirm Password is required')
-      } else  if (
-          this.state.email !== "" &&
-          this.state.password !== "" &&
-          this.state.passwordConfirm !== ""
-      ){
+        return null
+      } else if (this.state.password !== this.state.passwordConfirm)
+      {
         swal({
             title: "Login",
-            text: "Login Success !!",
-            icon: "success",
+            text: "Login Failed !!",
+            icon: "warning",
             button: "oke"
         });
+        return null
       }
           
       let data = {
@@ -67,6 +69,12 @@ class LoginPage extends Component {
         localStorage.setItem('card_number', res.data.result.card_number)
         localStorage.setItem('id_user', res.data.result.id_user)
         localStorage.setItem('role_id', res.data.result.role_id)
+        swal({
+          title: "Login",
+          text: "Login Success !!",
+          icon: "success",
+          button: "oke"
+        });
         this.props.history.push('/home')
       })
       .catch(err => console.log(err));
