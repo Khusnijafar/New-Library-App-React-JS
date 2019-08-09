@@ -62,15 +62,15 @@ class BookDetail extends Component {
     }
   }
 
-  deleteBook() {
-        swal({
-            title: "Delete !",
-            text: "Deleted Success !!",
-            icon: "success",
-            button: "oke"
-        });
-      this.setState.redirect = true;
-  }
+  // deleteBook() {
+  //       swal({
+  //           title: "Delete !",
+  //           text: "Deleted Success !!",
+  //           icon: "success",
+  //           button: "oke"
+  //       });
+  //     this.setState.redirect = true;
+  // }
 
   handleChange = (e) => {
     this.setState({
@@ -113,7 +113,7 @@ class BookDetail extends Component {
   updateFinish = async (e) => {
     e.preventDefault();
 
-    await Api.patch("/home" + this.state.id_params, {
+    await Api.patch("/" + this.state.id_params, {
       title: this.state.title,
       image: this.state.image,
       writer: this.state.writer,
@@ -137,7 +137,6 @@ class BookDetail extends Component {
   deleteBook = () => {
     swal({
       title: "Are you sure?",
-      text: "Once deleted, you will not be able to recover this imaginary file!",
       icon: "warning",
       buttons: true,
       dangerMode: true,
