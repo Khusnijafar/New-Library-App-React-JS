@@ -78,13 +78,6 @@ class BookDetail extends Component {
     })
   }
 
-  borrowBook = (e) => {
-    e.preventDefault()
-    if (parseInt(this.props.id_user) === 41) {
-      
-    }
-  }
-
   borrowBooks = async () => {
     let data = {
       card_number: localStorage.card_number,
@@ -105,7 +98,7 @@ class BookDetail extends Component {
         icon: "success",
         button: "oke",
       })
-      this.props.history.push('/home')
+      this.props.history.push('/')
     })
     .catch((error) => {
       swal({
@@ -138,7 +131,7 @@ class BookDetail extends Component {
       icon: "success",
       button: "oke",
     })
-    this.props.history.push('/home')
+    this.props.history.push('/')
   }
 
   deleteBook = () => {
@@ -151,11 +144,11 @@ class BookDetail extends Component {
     })
       .then(async (willDelete) => {
         if(willDelete) {
-          await Api.delete('/home' + this.state.id_book)
+          await Api.delete('/' + this.state.id_book)
             .then(response => 
               console.log(response.data)
             )
-          this.props.history.push('/home')
+          this.props.history.push('/')
           swal("Your data has been deleted", {
             icon: "success"
           })

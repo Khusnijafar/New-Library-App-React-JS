@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux'
-import { getHistory } from '../redux/actions/loanbook'
+import { connect } from 'react-redux';
+import { getHistory } from '../redux/actions/loanbook';
+import Navbar from '../components/Navbar';
 
 class HistoryBorrow extends Component {
     constructor(props) {
@@ -18,39 +19,35 @@ class HistoryBorrow extends Component {
         }) 
     }
       render() {
-    return (
-      <div className="container">
-        <div className="row mt-5">
-          <div className="col-6">
-            <ul className="list-group">
-              <li className="list-group-item active">Book Transaction</li>
-              <li className="list-group-item">Loaning</li>
-            </ul>
+        return (
+         <div>
+          <Navbar />
+          <div className="container">
             <div className="row mt-5">
-              <div class="card mb-3" style={{width: "540px"}}>
+              <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">List Buku Dipinjam</th>
+                  </tr>
+                </thead>
+                <tbody>
                 {this.props.loanList.map((item) => {
                   if(item.card_number === this.state.card_number) {
                       return(
-                        <div class="row no-gutters">
-                          <div class="col-md-4 mb-5">
-                            <img src={item.image} class="card-img" alt="..." height="150px;" />
-                          </div>
-                       <div class="col-md-8">
-                          <div class="card-body">
-                              <h5 class="card-title">Tanggal pengembalian : {item.expired_date}</h5>                              
-                              <p class="card-text"><small class="text-muted">Jumlah denda: {item.forfeit}</small></p>
-                              <p class="card-text"><i>note: {item.information}</i></p>
-                          </div>
-                       </div>
-                    </div>
+                        <div>
+                        <th scope="row">{item.id_book}</th>
+                        <td><img src={item.image} alt="..." height="150px;" width="100px"/></td>
+                        <td><h5 class="card-title">Tanggal pengembalian : {item.expired_date}</h5> </td>
+                        <td><p class="card-text"><small class="text-muted">Jumlah denda: {item.forfeit}</small></p></td>
+                        </div>
                       )
                   }
-              })}
-              </div>
+                })}
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
-      </div>
     );
   }
 }
@@ -59,7 +56,13 @@ const mapStateToProps = state => {
     return {
         loanList: state.loan.loanList
     }
+}
   
-  }
+export default connect(mapStateToProps)(HistoryBorrow);
+
+
+
+
   
-  export default connect(mapStateToProps)(HistoryBorrow);
+
+

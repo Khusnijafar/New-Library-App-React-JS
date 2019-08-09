@@ -18,7 +18,7 @@ class Header extends Component {
             <div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
                     <div className="container">
-                        <a className="navbar-brand" href="/home"><h3>BOOKS LIBRARY</h3></a>
+                        <a className="navbar-brand" href="/"><h3>BOOKS LIBRARY</h3></a>
                             <div className="collapse navbar-collapse" id="navbarSupportedContent">
 
                             <ul className="navbar-nav ml-auto">
@@ -27,14 +27,14 @@ class Header extends Component {
                                         {console.log(localStorage.role_id)}
                                             <a href="/history" className="dropdown-item" >Loaning History</a>
                                             <div className="dropdown-divider"></div>
-                                            <a className="dropdown-item" href="/home" onClick={this.logout}>Logout</a>                                      
+                                            <a className="dropdown-item" href="/" onClick={this.logout}>Logout</a>                                      
                                     </li>
                                     : (parseInt(localStorage.role_id) === 1) ?
                                     <li className="nav-item dropdown">
                                             <Link to="#" className="dropdown-item" >List User</Link>
                                             <Link to="/return" className="dropdown-item">Loan History</Link>
                                             <div className="dropdown-divider"></div>
-                                            <a className="dropdown-item" href="/home" onClick={this.logout}>Logout</a>
+                                            <a className="dropdown-item" href="/" onClick={this.logout}>Logout</a>
                                     </li>
                                     :<li className="nav-item">
                                     <a className="nav-link" href="/register">Register</a>

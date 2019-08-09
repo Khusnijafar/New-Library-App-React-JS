@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux'
 import { getHistory, postHistory } from '../redux/actions/loanbook'
 import swal from 'sweetalert';
+import Navbar from '../components/Navbar';
 
 class Returning extends Component {
     constructor(props) {
@@ -40,48 +41,46 @@ class Returning extends Component {
     }
 
     render() {
-            return (
-            <div className="container">
-            <div className="row mt-5">
-              <div className="col-6">
-                <ul className="list-group">
-                  <li className="list-group-item active">Book Transaction</li>
-                  <li className="list-group-item">Loaning</li>
-                </ul>
-                <div className="row mt-5">
-                  <div class="card mb-3" style={{width: "540px"}}>
-                    {this.props.loanList.map((item) => {
-                      if(item.information === 'DIPINJAM') {
-                          return(
-                            <div class="row no-gutters">
-                              <div class="col-md-4 mb-5">
-                                <img src={item.image} class="card-img" alt="..." height="150px;" />
-                              </div>
-                           <div class="col-md-8">
-                              <div class="card-body">
-                                  <h5 class="card-title">Tanggal pengembalian : {item.expired_date}</h5>                              
-                                  <p class="card-text"><small class="text-muted">Jumlah denda: {item.forfeit}</small></p>
-                                 <button class="btn btn-primary" onClick={() => this.handleReturn(item)}>Return</button>
-                              </div>
-                           </div>
-                        </div>
-                          )
-                      }
-                  })}
-                  </div>
-                </div>
-              </div>
-            </div>
+      return (
+        <div>
+        <Navbar />
+        <div className="container">
+          <div className="row mt-5">
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">List Buku Dipinjam</th>
+                </tr>
+              </thead>
+              <tbody>
+              {this.props.loanList.map((item) => {
+                if(item.information === 'DIPINJAM') {
+                    return(
+                      <div>
+                      <th scope="row">ID Book: {item.id_book}</th>
+                      <td><img src={item.image} alt="..." height="150px;" width="100px"/></td>
+                      <td><h5 class="card-title">Tanggal pengembalian : {item.expired_date}</h5> </td>
+                      <tr><p class="card-text"><small class="text-muted">Jumlah denda: {item.forfeit}</small></p></tr>
+                      <button class="btn btn-primary" onClick={() => this.handleReturn(item)}>Return</button>
+                      </div>
+                    )
+                }
+              })}
+              </tbody>
+            </table>
           </div>
+        </div>
+      </div>
         )
     }
 }
+
+
 
 const mapStateToProps = state => {
     return {
         loanList: state.loan.loanList
     }
+}
   
-  }
-  
-  export default connect(mapStateToProps)(Returning);
+export default connect(mapStateToProps)(Returning);

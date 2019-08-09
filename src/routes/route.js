@@ -14,7 +14,7 @@ class Routes extends Component {
         <Router>
           <Route exact path='/register' component={RegisterPage} />
           <Route exact path='/login' component={LoginPage} />
-          <Route exact path="/home" component={Home}/>
+          <Route exact path="/" component={Home}/>
           <Route exact path={"/home/:id_book"} component={BookDetail}/>
           <Route exact path={"/history"} component={HistoryBorrow}/>
           <Route exact path={"/return"} component={Returning}/>

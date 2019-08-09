@@ -75,7 +75,7 @@ class LoginPage extends Component {
           icon: "success",
           button: "oke"
         });
-        this.props.history.push('/home')
+        this.props.history.push('/')
       })
       .catch(err => console.log(err));
     } 
