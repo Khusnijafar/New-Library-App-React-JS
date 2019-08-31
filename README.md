@@ -2,7 +2,28 @@
 ![](https://img.shields.io/badge/Dependencies-Express-green.svg)
 
 
-## Prerequiste
+## Table of Contents
+
+- [Table of Contents](#table-of-contents)
+- [Introduction](#introduction)
+- [Features](#features)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Screenshoot](#screenshoot)
+- [Related Project](#related-project)
+- [Contributors](#contributors)
+
+## Introduction
+
+Library App is application for user and librarian, user is able to borrow a book, and help librarian to know the books that is borrowed by user
+
+# Features
+
+- Login
+- Register
+- Borrow Book
+
+## Requirements
 - Node.js - Download and Install [Node.js](https://nodejs.org/en/) with [NVM](https://github.com/creationix/nvm) (Node Version Manager) - Simple bash script to manage multiple active node.js versions.  
 
 ## Installation
@@ -23,11 +44,15 @@ Make sure you clone backend from this app
 $ npm start
 ```
 
-## Demo
+## Screenshoot
 
 ### Home
   ![home](/public/images/home.png)
   
+  
+## Related Project
+ 
+* In this repository only for the frontend section, for the backend section can be seen [here]().
 
 ### License
 ----
