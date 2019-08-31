@@ -11,7 +11,7 @@
 - [Installation](#installation)
 - [Screenshoot](#screenshoot)
 - [Related Project](#related-project)
-- [Contributors](#contributors)
+- [License](#license)
 
 ## Introduction
 
